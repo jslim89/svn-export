@@ -1,0 +1,32 @@
+# SVN Export
+Basically this is to copy out those files that have been committed to a external folder.  
+It will take from **svn log** to find out all the files from author that you specify and from revision range that you specify.
+
+## Example
+```shell
+python svnexport.py -r 30:25 -a jslim89 -d ~/export_dir -b branch/foo
+```
+This example is to show that it will take from:
+* revision **30** to **35**
+* the author is **jslim89**
+* export to **~/export_dir** directory
+* the project is from branch named *foo*
+
+This is the sample output
+    Copied: ./path/to/source_1.py -> /home/jslim89/path/to/source_1.py
+    Copied: ./path/to/source_2.py -> /home/jslim89/path/to/source_2.py
+    Copied: ./path/to/source_3.py -> /home/jslim89/path/to/source_3.py
+**Assumed that the home directory is _/home/jslim89/_
+
+## Options
+* -r or --revision    -> Which revision you want to export
+* -a or --author      -> The author who commit the source code
+* -d or --destination -> The destination where you want to copy to
+* -b or --branch      -> The project is from which branch **(NOTE: default is _trunk_)**
+
+## Source Code & Download
+* Browse and checkout the [source code](https://github.com/jslim89/svn-export).
+* [Download](https://github.com/jslim89/svn-export/archives/master) the project.
+
+## License
+Released under the [GPL] (http://www.gnu.org/licenses/gpl.html)
