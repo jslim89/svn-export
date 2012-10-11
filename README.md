@@ -4,7 +4,7 @@ It will take from **svn log** to find out all the files from author that you spe
 
 ## Example
 ```shell
-python svnexport.py -r 30:25 -a jslim89 -d ~/export_dir -b branch/foo
+python svnexport.py -r 30:35 -a jslim89 -d ~/export_dir -b branch/foo
 ```
 This example is to show that it will take from:
 * revision **30** to **35**
@@ -13,10 +13,12 @@ This example is to show that it will take from:
 * the project is from branch named *foo*
 
 This is the sample output
-    Copied: ./path/to/source_1.py -> /home/jslim89/path/to/source_1.py
-    Copied: ./path/to/source_2.py -> /home/jslim89/path/to/source_2.py
-    Copied: ./path/to/source_3.py -> /home/jslim89/path/to/source_3.py
-**Assumed that the home directory is _/home/jslim89/_
+```
+Copied: ./path/to/source1.py -> /home/jslim89/path/to/source1.py
+Copied: ./path/to/source2.py -> /home/jslim89/path/to/source2.py
+Copied: ./path/to/source3.py -> /home/jslim89/path/to/source3.py
+```
+**Assumed that the home directory is _/home/jslim89/_**
 
 ## Options
 * -r or --revision    -> Which revision you want to export
