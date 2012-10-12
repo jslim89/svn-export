@@ -2,6 +2,7 @@
 
 import sys
 import subprocess
+import os
 import shutil
 # Reference: http://stackoverflow.com/questions/4499910/how-to-display-a-specific-users-commits-in-svn-log#answers
 import xml.etree.ElementTree as ET
@@ -32,7 +33,7 @@ def getFileList(xml):
                 continue
             # path.text should output like this "/trunk/path/to/source.py"
             # only replace the first occurance
-            filePath = path.text.replace("/"+options.branch, ".", 1)
+            filePath = path.text.replace("/"+options.branch+"/", "", 1)
             # will not be added again if the element is existed in the list
             # NOTE: similar to php "in_array($path.text, $fileList)"
             if filePath in fileList:
@@ -40,10 +41,19 @@ def getFileList(xml):
             fileList.append(filePath)
     return fileList
 
+# Reference: http://stackoverflow.com/questions/12842997/how-to-copy-a-file-using-python#answers
+def cp(src, dst):
+    assert not os.path.isabs(src)
+    dstdir = os.path.join(dst, os.path.dirname(src))
+    if not os.path.exists(dstdir):
+        os.makedirs(dstdir)
+    dstfile = os.path.join(dst, src)
+    shutil.copyfile(src, dstfile)
+    print "Copied: "+src+" -> "+dstfile
+
 def main():
     files = getFileList(getXml())
     for f in files:
-        # shutil.copytree(f, options.destination)
-        print "Copied: "+f+" -> "+options.destination+f.replace(".", "", 1)
+        cp(f, options.destination)
 
 main()
