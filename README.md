@@ -15,9 +15,9 @@ This example is to show that it will take from:
 
 This is the sample output
 ```
-Copied: path/to/source1.py -> /home/jslim89/path/to/source1.py
-Copied: path/to/source2.py -> /home/jslim89/path/to/source2.py
-Copied: path/to/source3.py -> /home/jslim89/path/to/source3.py
+Copied: path/to/source1.py -> /home/jslim89/export_dir/path/to/source1.py
+Copied: path/to/source2.py -> /home/jslim89/export_dir/path/to/source2.py
+Copied: path/to/source3.py -> /home/jslim89/export_dir/path/to/source3.py
 ```
 **Assumed that the home directory is _/home/jslim89/_**
 
