@@ -21,9 +21,9 @@ Copied: path/to/source3.py -> /home/jslim89/path/to/source3.py
 **Assumed that the home directory is _/home/jslim89/_**
 
 ## Options
-* -r or --revision    -> Which revision you want to export
-* -a or --author      -> The author who commit the source code
-* -d or --destination -> The destination where you want to copy to
+* -r or --revision    -> Which revision you want to export (Required)
+* -a or --author      -> The author who commit the source code (Required)
+* -d or --destination -> The destination where you want to copy to (Required)
 * -b or --branch      -> The project is from which branch **(NOTE: default is _trunk_)**
 
 ## Source Code & Download
