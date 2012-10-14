@@ -30,6 +30,3 @@ Copied: path/to/source3.py -> /home/jslim89/export_dir/path/to/source3.py
 ## Source Code & Download
 * Browse and checkout the [source code](https://github.com/jslim89/svn-export).
 * [Download](https://github.com/jslim89/svn-export/archives/master) the project.
-
-## License
-Released under the [GPL] (http://www.gnu.org/licenses/gpl.html)
