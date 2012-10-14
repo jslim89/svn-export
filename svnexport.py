@@ -66,8 +66,13 @@ def cp(src, dst):
     print "Copied: "+src+" -> "+dstfile
 
 def main():
-    files = getFileList(getXml())
-    for f in files:
-        cp(f, options.destination)
+    try:
+        files = getFileList(getXml())
+        for f in files:
+            cp(f, options.destination)
+    except Exception:
+        parser.print_help()
+    sys.exit(0)
 
-main()
+if __name__ == "__main__":
+    main()
