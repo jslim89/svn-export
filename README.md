@@ -2,7 +2,8 @@
 Basically this is to copy out those files that have been committed to a external folder.  
 It will take from **svn log** to find out all the files from author that you specify and from revision range that you specify.
 
-## Example
+## Usage
+**NOTE: Please ensure that your svnexport.py is place inside the project _root dir_**
 ```shell
 python svnexport.py -r 30:35 -a jslim89 -d ~/export_dir -b branch/foo
 ```
