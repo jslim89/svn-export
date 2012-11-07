@@ -14,6 +14,8 @@ parser.add_option("-a", "--author", dest="author", help="Author who commit to sv
 parser.add_option("-r", "--revision", dest="revision", help="Start from which revision")
 parser.add_option("-d", "--destination", dest="destination", help="Destination where you want to export")
 parser.add_option("-b", "--branch", dest="branch", default="trunk", help="Whether the project is in 'trunk' or 'branch'")
+parser.add_option("-f", "--filename", dest="file", default="svn-export_source_list.txt", help="Write the source list to a file")
+parser.add_option("-p", "--file-prefix", dest="file_prefix", default=".", help="Prefix of the file path. i.e. prefix/path/to/file")
 
 (options, args) = parser.parse_args()
 
@@ -54,8 +56,12 @@ def cp(src, dst):
 def main():
     try:
         files = getFileList(getXml())
+        outfile = open(options.file, 'a')
         for f in files:
             cp(f, options.destination)
+            if options.file:
+                outfile.write("%s/%s\n" % (options.file_prefix, f))
+        outfile.close()
     except Exception:
         parser.print_help()
     sys.exit(0)
